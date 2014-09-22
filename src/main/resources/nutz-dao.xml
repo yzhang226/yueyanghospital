@@ -1,0 +1,11 @@
+<ioc xsi:noNamespaceSchemaLocation="nutz-ioc-0.1.xsd">
+	<obj name="dataSource" type="com.jolbox.bonecp.BoneCPDataSource">
+		<events>
+			<depose>close</depose>
+		</events>
+		<field name="driverClass"> <str>com.mysql.jdbc.Driver</str> </field>
+		<field name="url"> <str>jdbc:mysql://localhost:3306/hospital</str> </field>
+		<field name="username" > <str>root</str> </field>
+		<field name="password"> <str>6567zhyf</str> </field>
+	</obj>
+</ioc>
