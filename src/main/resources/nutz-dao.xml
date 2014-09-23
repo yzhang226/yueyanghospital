@@ -4,7 +4,7 @@
 			<depose>close</depose>
 		</events>
 		<field name="driverClass"> <str>com.mysql.jdbc.Driver</str> </field>
-		<field name="url"> <str>jdbc:mysql://localhost:3306/hospital</str> </field>
+		<field name="jdbcUrl"> <str>jdbc:mysql://localhost:3306/hospital</str> </field>
 		<field name="username" > <str>root</str> </field>
 		<field name="password"> <str>6567zhyf</str> </field>
 	</obj>

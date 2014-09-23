@@ -35,9 +35,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.omega</groupId>
-			<artifactId>mytools</artifactId>
-			<version>0.1.0</version>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>0.8.0.RELEASE</version>
 		</dependency>
 
 		<dependency>

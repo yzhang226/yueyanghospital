@@ -7,7 +7,7 @@ import org.nutz.dao.entity.annotation.Table;
 @Table("doctor")
 public class Doctor {
 
-	@Id(auto=true)
+	@Id
 	private int id;
 	
 	@Column
@@ -32,7 +32,7 @@ public class Doctor {
 	private String workTime;
 	
 	@Column
-	private String desc;
+	private String description;
 	
 	@Column("skill_desc")
 	private String skillDesc;
@@ -88,11 +88,11 @@ public class Doctor {
 	public void setWorkTime(String workTime) {
 		this.workTime = workTime;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDescription() {
+		return description;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getSkillDesc() {
 		return skillDesc;
