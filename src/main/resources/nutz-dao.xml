@@ -8,4 +8,9 @@
 		<field name="username" > <str>root</str> </field>
 		<field name="password"> <str>6567zhyf</str> </field>
 	</obj>
+	<obj name="dao" type="org.nutz.dao.impl.NutDao">
+		<args>
+			<refer>dataSource</refer>
+		</args>
+	</obj>
 </ioc>

@@ -5,7 +5,9 @@ import org.nutz.dao.entity.annotation.Id;
 import org.nutz.dao.entity.annotation.Table;
 
 @Table("doctor")
-public class Doctor {
+public class Doctor extends _BaseEntity {
+
+	private static final long serialVersionUID = 2466744122497475262L;
 
 	@Id
 	private int id;

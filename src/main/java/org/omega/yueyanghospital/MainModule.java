@@ -2,36 +2,29 @@ package org.omega.yueyanghospital;
 
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.nutz.dao.Dao;
-import org.nutz.dao.impl.NutDao;
 import org.nutz.ioc.Ioc;
 import org.nutz.ioc.impl.NutIoc;
-import org.nutz.ioc.loader.json.JsonLoader;
 import org.nutz.ioc.loader.xml.XmlIocLoader;
 import org.nutz.mvc.annotation.At;
+import org.nutz.mvc.annotation.Encoding;
+import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Modules;
 import org.nutz.mvc.annotation.Ok;
+import org.nutz.mvc.ioc.provider.ComboIocProvider;
 import org.omega.yueyanghospital.entity.Doctor;
-
-import com.jolbox.bonecp.BoneCPDataSource;
 
 
 @Modules(scanPackage = true)
+@IocBy(type=ComboIocProvider.class, args={"*org.nutz.ioc.loader.xml.XmlIocLoader", "nutz-dao.xml", "*org.nutz.ioc.loader.annotation.AnnotationIocLoader", "org.omega.yueyanghospital"})
+@Encoding(input="UTF-8", output="UTF-8")
 public class MainModule {
 
 	@At("/index")
 	@Ok("jsp:/index")
 	public String hello() {
-		//将配置信息保存到dao.xml,并存放于src文件夹下
-
-//		Ioc ioc = new NutIoc(new XmlIocLoader("nutz-dao.xml"));
-		Ioc ioc = new NutIoc(new JsonLoader("nut-dao.json"));
-		BoneCPDataSource ds = ioc.get(BoneCPDataSource.class, "dataSource");
-		Dao dao = new NutDao(ds); //如果已经定义了dao,那么改成dao = ioc.get(Dao.class);
-
-//		dao.create(Doctor.class, true);
+		Ioc ioc = new NutIoc(new XmlIocLoader("nutz-dao.xml"));
+		Dao dao = ioc.get(Dao.class);
 		try {
 			Doctor doct = new Doctor();
 			doct.setName("test");
@@ -47,9 +40,6 @@ public class MainModule {
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 		return "okkkk";
 	}
 	
